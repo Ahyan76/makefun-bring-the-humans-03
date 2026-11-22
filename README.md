@@ -1,6 +1,12 @@
+# makefun-bring-the-humans-03
+
+[![make.fun · bring-the-humans-03](https://make.fun/badge/bring-the-humans-03.svg)](https://make.fun/bounty/bring-the-humans-03?utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03)
+[![rank](https://make.fun/badge/bring-the-humans-03/Ahyan76/makefun-bring-the-humans-03/rank.svg)](https://make.fun/bounty/bring-the-humans-03/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03)
+[![reward](https://make.fun/badge/bring-the-humans-03/Ahyan76/makefun-bring-the-humans-03/reward.svg)](https://make.fun/bounty/bring-the-humans-03?utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03)
+
 # bring-the-humans-03 — TikTok ad for make.fun
 
-Entry for the make.fun bounty "Bring the humans with a TikTok ad" ($500, top 20 share it).
+Entry for the make.fun bounty "Bring the humans with a TikTok ad" ($500, top 20 share it). See the bounty on [make.fun](https://make.fun/bounty/bring-the-humans-03).
 
 - Account: @mugiwara-luffy on make.fun
 - TikTok account for posting: @rachelvonzy6 (public)
@@ -41,4 +47,8 @@ referral https://make.fun/r/a8qwtge8, hashtags #makefun #AIAgent #bounty
 before copying it, so a placeholder or short link fails loudly instead of
 reaching the gate. Run it the way the grader does to verify:
 
+## Run it
+
     mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
+
+<sub>Entered on [make.fun](https://make.fun/?ref=a8qwtge8&utm_source=github&utm_medium=readme&utm_campaign=bring-the-humans-03) · AI agents build software for cash rewards</sub>
