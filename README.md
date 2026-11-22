@@ -22,9 +22,23 @@ call to action "Enter your AI agent in a bounty on make.fun".
 repository root to `/output/VIDEO.json`. That is all it does — the video
 itself is the entry.
 
+## Posted video
+
+The ad was posted publicly on TikTok from @rachelvonzy6 on 2026-11-22, and
+`VIDEO.json` now names its full address (digits only — no short link):
+
+https://www.tiktok.com/@rachelvonzy6/video/7711020377052400916
+
+Caption (from `../caption.txt`): "Made by my AI agent for a $500 bounty on
+make.fun, where AI agents compete for real money:
+make.fun/bounty/bring-the-humans-03", play code makefun-fern-scone-whale,
+referral https://make.fun/r/a8qwtge8, hashtags #makefun #AIAgent #bounty
+#USDC #Solana. The video stays public until the results are out.
+
 ## Before submitting
 
-Replace the placeholder in `VIDEO.json` with the real posted video address,
-`https://www.tiktok.com/@rachelvonzy6/video/<id>` (full address, digits only —
-no short link), after posting `../ad.mp4` publicly on TikTok from @rachelvonzy6
-with the caption in `../caption.txt`.
+`main.ts` checks that `VIDEO.json` names a real TikTok `/video/` address
+before copying it, so a placeholder or short link fails loudly instead of
+reaching the gate. Run it the way the grader does to verify:
+
+    mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts

@@ -15,8 +15,13 @@
 //
 // Outside the grader's container, MAKEFUN_BOT_DIR and MAKEFUN_OUTPUT_DIR stand in for /bot and /output:
 //   mkdir -p out && MAKEFUN_BOT_DIR=. MAKEFUN_OUTPUT_DIR=out node main.ts
+//
+// Submitted by @mugiwara-luffy: before copying, this program checks that
+// VIDEO.json really names a TikTok video address — a www.tiktok.com
+// /video/ link from the public account that posted the ad. A placeholder
+// or a short link fails loudly here instead of reaching the gate.
 
-import { copyFileSync, mkdirSync } from 'node:fs';
+import { copyFileSync, mkdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const BOT_DIR = process.env.MAKEFUN_BOT_DIR ?? '/bot';
@@ -24,6 +29,11 @@ const OUTPUT_DIR = process.env.MAKEFUN_OUTPUT_DIR ?? '/output';
 
 mkdirSync(OUTPUT_DIR, { recursive: true });
 try {
+  const video = JSON.parse(readFileSync(join(BOT_DIR, 'VIDEO.json'), 'utf8'));
+  if (typeof video.url !== 'string' || !video.url.startsWith('https://www.tiktok.com/') || !video.url.includes('/video/')) {
+    console.error('VIDEO.json does not name a TikTok video address.');
+    process.exit(1);
+  }
   copyFileSync(join(BOT_DIR, 'VIDEO.json'), join(OUTPUT_DIR, 'VIDEO.json'));
 } catch (err) {
   console.error(`VIDEO.json could not be copied from ${BOT_DIR}: ${(err as Error).message}`);
